@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+}
+
+.img-zoom-container {
+    position: relative;
+}
+
+.img-zoom-lens {
+    position: absolute;
+    /*set the size of the lens:*/
+    margin-left: 33%;
+    width: 100px;
+    height: 200px;
+    z-index: 2;
+}
+
+.img-zoom-result {
+    border: 1px solid #d4d4d4;
+    /*set the size of the result div:*/
+    width: 350px;
+    height: 700px;
+    margin: 50% 0 0 75%;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+#myimage {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+}
+
+.changePage {
+    position: fixed;
+    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+    background-color: rgb(0, 0, 0);
+    width: 28px;
+    height: 28px;
+    transform: translateY(-50%);
+    top: 50%;
+    right: 30%;
+}
+
+.changePage:hover {
+    position: fixed;
+    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+    background-color: rgb(0, 0, 0);
+    width: 35px;
+    height: 35px;
+    transform: translateY(-50%);
+    top: 50%;
+    right: 30%;
+}
+
+.backPage {
+    position: fixed;
+    clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
+    background-color: rgb(0, 0, 0);
+    width: 28px;
+    height: 28px;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 30%;
+}
+
+.backPage:hover {
+    position: fixed;
+    clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
+    background-color: rgb(0, 0, 0);
+    width: 35px;
+    height: 35px;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 30%;
+}
+
+h1 {
+    position: fixed;
+    top: 1%;
+    left: 10%;
+}
+
+#chapters {
+    position: fixed;
+    top: 10%;
+    left: 0;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    overflow: auto;
+}
+
+.btn {
+    margin: 30px;
+    width: 150px;
+    height: 215px;
+}
+
+.btn:hover {
+    margin: 25px;
+    width: 155px;
+    height: 220px;
+    border: 5px solid rgb(194, 21, 21);
+}
+
+#HdP1 {
+    background-image: url(../img/1/0.png);
+    background-size: cover;
+}
+
+#HdP2 {
+    background-image: url(../img/2/0.png);
+    background-size: cover;
+}
+
+#HdP3 {
+    background-image: url(../img/3/0.png);
+    background-size: cover;
+}
+
+#HdP4 {
+    background-image: url(../img/4/0.png);
+    background-size: cover;
+}
+
+#HdP5 {
+    background-image: url(../img/5/0.png);
+    background-size: cover;
+}
+
+#HdP6 {
+    background-image: url(../img/6/0.png);
+    background-size: cover;
+}
+
+#HdP7 {
+    background-image: url(../img/7/0.png);
+    background-size: cover;
+}

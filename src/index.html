@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const firstChapter = []
+        for (let i = 0; i <= 10; i++) {
+            firstChapter[i] = new Image
+            firstChapter[i].src = '../img/1/' + (i) + '.png'
+        }
+        const secondChapter = []
+        for (let i = 0; i <= 11; i++) {
+            secondChapter[i] = new Image
+            secondChapter[i].src = '../img/2/' + (i) + '.png'
+        }
+        const thirdChapter = []
+        for (let i = 0; i <= 10; i++) {
+            thirdChapter[i] = new Image
+            thirdChapter[i].src = '../img/3/' + (i) + '.png'
+        }
+        const fourthChapter = []
+        for (let i = 0; i <= 14; i++) {
+            fourthChapter[i] = new Image
+            fourthChapter[i].src = '../img/4/' + (i) + '.png'
+        }
+        const fifthChapter = []
+        for (let i = 0; i <= 16; i++) {
+            fifthChapter[i] = new Image
+            fifthChapter[i].src = '../img/5/' + (i) + '.png'
+        }
+        const sixthChapter = []
+        for (let i = 0; i <= 15; i++) {
+            sixthChapter[i] = new Image
+            sixthChapter[i].src = '../img/6/' + (i) + '.png'
+        }
+        const seventhChapter = []
+        for (let i = 0; i <= 13; i++) {
+            seventhChapter[i] = new Image
+            seventhChapter[i].src = '../img/7/' + (i) + '.png'
+        }
+
+        let pageCounter = 0;
+        let chapter = 1;
+        const changePage = () => {
+            pageCounter++
+            if (pageCounter > firstChapter.length - 1 && chapter == 1) {
+                pageCounter = 0
+                chapter = 2
+            } else if (pageCounter > secondChapter.length - 1 && chapter == 2) {
+                pageCounter = 0
+                chapter = 3
+            } else if (pageCounter > thirdChapter.length - 1 && chapter == 3) {
+                pageCounter = 0
+                chapter = 4
+            } else if (pageCounter > fourthChapter.length - 1 && chapter == 4) {
+                pageCounter = 0
+                chapter = 5
+            } else if (pageCounter > fifthChapter.length - 1 && chapter == 5) {
+                pageCounter = 0
+                chapter = 6
+            } else if (pageCounter > sixthChapter.length - 1 && chapter == 6) {
+                pageCounter = 0
+                chapter = 7
+            } else if (pageCounter > seventhChapter.length - 1 && chapter == 7) {
+                pageCounter = seventhChapter.length
+                chapter = 7
+            }
+            switch (chapter) {
+                case 1:
+                    document.getElementById('myimage').src = firstChapter[pageCounter].src
+                    break;
+                case 2:
+                    document.getElementById('myimage').src = secondChapter[pageCounter].src
+                    break;
+                case 3:
+                    document.getElementById('myimage').src = thirdChapter[pageCounter].src
+                    break;
+                case 4:
+                    document.getElementById('myimage').src = fourthChapter[pageCounter].src
+                    break;
+                case 5:
+                    document.getElementById('myimage').src = fifthChapter[pageCounter].src
+                    break;
+                case 6:
+                    document.getElementById('myimage').src = sixthChapter[pageCounter].src
+                    break;
+                case 7:
+                    document.getElementById('myimage').src = seventhChapter[pageCounter].src
+                    break;
+            }
+            imageZoom("myimage", "myresult");
+        }
+        const backPage = () => {
+            pageCounter--
+            if (pageCounter < 0 && chapter == 7) {
+                chapter = 6
+                pageCounter = sixthChapter.length - 1
+            } else if (pageCounter < 0 && chapter == 6) {
+                chapter = 5
+                pageCounter = fifthChapter.length - 1
+            } else if (pageCounter < 0 && chapter == 5) {
+                chapter = 4
+                pageCounter = fourthChapter.length - 1
+            } else if (pageCounter < 0 && chapter == 4) {
+                chapter = 3
+                pageCounter = thirdChapter.length - 1
+            } else if (pageCounter < 0 && chapter == 3) {
+                chapter = 2
+                pageCounter = secondChapter.length - 1
+            } else if (pageCounter < 0 && chapter == 2) {
+                chapter = 1
+                pageCounter = firstChapter.length - 1
+            } else if (pageCounter < 0 && chapter == 1) {
+                chapter = 1
+                pageCounter = 0
+            }
+            switch (chapter) {
+                case 1:
+                    document.getElementById('myimage').src = firstChapter[pageCounter].src
+                    break;
+                case 2:
+                    document.getElementById('myimage').src = secondChapter[pageCounter].src
+                    break;
+                case 3:
+                    document.getElementById('myimage').src = thirdChapter[pageCounter].src
+                    break;
+                case 4:
+                    document.getElementById('myimage').src = fourthChapter[pageCounter].src
+                    break;
+                case 5:
+                    document.getElementById('myimage').src = fifthChapter[pageCounter].src
+                    break;
+                case 6:
+                    document.getElementById('myimage').src = sixthChapter[pageCounter].src
+                    break;
+                case 7:
+                    document.getElementById('myimage').src = seventhChapter[pageCounter].src
+                    break;
+            }
+            imageZoom("myimage", "myresult");
+        }
+        const setChapter = (inChapter) => {
+            chapter = inChapter
+            pageCounter = 0
+            switch (chapter) {
+                case 1:
+                    document.getElementById('myimage').src = firstChapter[pageCounter].src
+                    break;
+                case 2:
+                    document.getElementById('myimage').src = secondChapter[pageCounter].src
+                    break;
+                case 3:
+                    document.getElementById('myimage').src = thirdChapter[pageCounter].src
+                    break;
+                case 4:
+                    document.getElementById('myimage').src = fourthChapter[pageCounter].src
+                    break;
+                case 5:
+                    document.getElementById('myimage').src = fifthChapter[pageCounter].src
+                    break;
+                case 6:
+                    document.getElementById('myimage').src = sixthChapter[pageCounter].src
+                    break;
+                case 7:
+                    document.getElementById('myimage').src = seventhChapter[pageCounter].src
+                    break;
+            }
+            imageZoom("myimage", "myresult");
+        }
+        function imageZoom(imgID, resultID) {
+            var img, lens, result, cx, cy;
+            img = document.getElementById(imgID);
+            result = document.getElementById(resultID);
+            /*create lens:*/
+            lens = document.createElement("DIV");
+            lens.setAttribute("class", "img-zoom-lens");
+            /*insert lens:*/
+            img.parentElement.insertBefore(lens, img);
+            /*calculate the ratio between result DIV and lens:*/
+            cx = result.offsetWidth / lens.offsetWidth;
+            cy = result.offsetHeight / lens.offsetHeight;
+            /*set background properties for the result DIV:*/
+            result.style.backgroundImage = "url('" + img.src + "')";
+            result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
+            /*execute a function when someone moves the cursor over the image, or the lens:*/
+            lens.addEventListener("mousemove", moveLens);
+            img.addEventListener("mousemove", moveLens);
+            /*and also for touch screens:*/
+            lens.addEventListener("touchmove", moveLens);
+            img.addEventListener("touchmove", moveLens);
+            function moveLens(e) {
+                var pos, x, y;
+                /*prevent any other actions that may occur when moving over the image:*/
+                e.preventDefault();
+                /*get the cursor's x and y positions:*/
+                pos = getCursorPos(e);
+                /*calculate the position of the lens:*/
+                x = pos.x - (lens.offsetWidth / 2);
+                y = pos.y - (lens.offsetHeight / 2);
+                /*prevent the lens from being positioned outside the image:*/
+                if (x > img.width - lens.offsetWidth) { x = img.width - lens.offsetWidth; }
+                if (x < 0) { x = 0; }
+                if (y > img.height - lens.offsetHeight) { y = img.height - lens.offsetHeight; }
+                if (y < 0) { y = 0; }
+                /*set the position of the lens:*/
+                lens.style.left = x + "px";
+                lens.style.top = y + "px";
+                /*display what the lens "sees":*/
+                result.style.backgroundPosition = "-" + (x * cx) + "px -" + (y * cy) + "px";
+            }
+            function getCursorPos(e) {
+                var a, x = 0, y = 0;
+                e = e || window.event;
+                /*get the x and y positions of the image:*/
+                a = img.getBoundingClientRect();
+                /*calculate the cursor's x and y coordinates, relative to the image:*/
+                x = e.pageX - a.left;
+                y = e.pageY - a.top;
+                /*consider any page scrolling:*/
+                x = x - window.pageXOffset;
+                y = y - window.pageYOffset;
+                return { x: x, y: y };
+            }
+        }
+    </script>
+    <div class="img-zoom-container">
+        <div id="myresult" class="img-zoom-result"></div>
+        <img id="myimage" src="../img/1/0.png">
+    </div>
+    <h1> Capitulos </h1>
+    <div id="chapters">
+        <input id="HdP1" class="btn" type="button" onclick="setChapter(1)">
+        <input id="HdP2" class="btn" type="button" onclick="setChapter(2)">
+        <input id="HdP3" class="btn" type="button" onclick="setChapter(3)">
+        <input id="HdP4" class="btn" type="button" onclick="setChapter(4)">
+        <input id="HdP5" class="btn" type="button" onclick="setChapter(5)">
+        <input id="HdP6" class="btn" type="button" onclick="setChapter(6)">
+        <input id="HdP7" class="btn" type="button" onclick="setChapter(7)">
+    </div>
+    <input class='changePage' type="button" onclick="changePage()">
+    <input class='backPage' type="button" onclick="backPage()">
+    <div id="myresult" class="img-zoom-result"></div>
+
+    <script>
+        // Initiate zoom effect:
+        imageZoom("myimage", "myresult");
+    </script>
+
+</body>
+
+</html>
